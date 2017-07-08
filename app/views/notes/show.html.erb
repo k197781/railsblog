@@ -18,10 +18,11 @@
         
         <h2>★PV数ランキング</h2>
         <ul>
-            <li><a href="">記事タイトル記事タイトル１記事タイトル記事タイトル<span>（10PV）</span></a></li>
-            <li><a href="">記事タイトル記事タイトル１記事タイトル記事タイトル<span>（8PV）</span></a></li>
-            <li><a href="">記事タイトル記事タイトル１記事タイトル記事タイトル<span>（2PV）</span></a></li>
+        <% @ranking_articles.each do |note| %> 
+            <li><%= link_to note_path(note.id) do %><%= note.title %><span></span><% end %></li>
+        <% end %>
         </ul>
+
     </div>
     <div class="clear"></div>
 </div>
