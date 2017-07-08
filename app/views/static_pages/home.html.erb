@@ -10,8 +10,10 @@
         <div>
             <h2><%= link_to note.title , note_path(note.id) %></h2>
             <p><%= note.created_at.year %>-<%= note.created_at.month %>-<%= note.created_at.day %></p>
-            <%= link_to "編集", edit_note_path(note.id) %>
-            <%= link_to "削除", note_path(note.id) , method: :delete %>
+            <% if user_signed_in? %>
+            	<%= link_to "編集", edit_note_path(note.id) %>
+            	<%= link_to "削除", note_path(note.id) , method: :delete %>
+            <% end %>
         </div>
 	    <% end %>
 
