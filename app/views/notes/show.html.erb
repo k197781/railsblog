@@ -1,6 +1,6 @@
 <div id="title">
     <div>
-        <p><%= @note.created_at %></p>
+        <p><%= @note.created_at.year %>-<%= @note.created_at.month %>-<%= @note.created_at.day %>/書いた人:<%= @note.user.email %></p>
         <h1><%= @note.title %></h1>
     </div>
 </div>
@@ -10,20 +10,9 @@
 
     <div id="content">
         <p><%= @note.content %></p>
-                
     </div>
 
-
-    <div id="sidebar">
-        
-        <h2>★PV数ランキング</h2>
-        <ul>
-        <% @ranking_articles.each do |note| %> 
-            <li><%= link_to note_path(note.id) do %><%= note.title %><span></span><% end %></li>
-        <% end %>
-        </ul>
-
-    </div>
-    <div class="clear"></div>
+	<%= render 'shared/side'  %>
+    
 </div>
 

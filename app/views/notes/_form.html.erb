@@ -1,0 +1,9 @@
+	<%= form_for(@note, url: url_path) do |f| %>
+	    <%= f.label :title %><br>
+	    <%= f.text_field :title, id: "article_title"%><br><br>
+
+	    <%= f.label :content %><br>
+	    <%= f.text_field :content, id: "article_content"%><br><br>
+
+	    <%= f.submit sendbtn %>
+	<% end %>

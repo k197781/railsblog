@@ -1,13 +1,5 @@
 <div id="article_wrap">
-	<%= form_for(@note, url: notes_path) do |f| %>
-	    <%= f.label :title %><br>
-	    <%= f.text_field :title, id: "article_title" %><br><br>
-		
-	    <%= f.label :content %><br>
-	    <%= f.text_field :content, id: "article_content"%><br><br>
 
-	    <%= f.submit "Create Article" %>
-
-	<% end %>
+	<%= render 'form', sendbtn: "Create Article", url_path: notes_path %>
 
 </div>
