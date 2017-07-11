@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-  	@notes = Note.all
+  	@notes = Note.all.order(created_at: :desc)
   	#ids = REDIS.zrevrangebyscore "ranking", "+inf", 0, limit: [0, 5]
   	#@ranking_articles = ids.map{ |id| Note.find(id) }
     #if @ranking_articles.count < 5
